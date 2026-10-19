@@ -1,0 +1,25 @@
+# Local credentials and environment settings
+.env
+.env.*
+.streamlit/secrets.toml
+*.pem
+*.key
+
+# MovieLens data and generated outputs: do not redistribute
+ml-1m.zip
+artifacts/
+
+# Python, test, editor and runtime files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+*.log
+*.tmp

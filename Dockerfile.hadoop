@@ -1,0 +1,12 @@
+FROM apache/hadoop:3.4.1 AS hadoop
+
+FROM python:3.11-slim
+COPY --from=hadoop /opt/hadoop /opt/hadoop
+COPY --from=hadoop /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre /opt/java
+COPY --from=hadoop /usr/share/javazi-1.8 /usr/share/javazi-1.8
+COPY --from=hadoop /etc/pki/java/cacerts /etc/pki/java/cacerts
+ENV JAVA_HOME=/opt/java \
+    HADOOP_HOME=/opt/hadoop \
+    HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop \
+    PATH=/opt/hadoop/bin:/opt/java/bin:$PATH
+WORKDIR /workspace
