@@ -21,6 +21,8 @@
    Invoke-WebRequest 'https://files.grouplens.org/datasets/movielens/ml-1m.zip' -OutFile 'ml-1m.zip'
    ```
 
+   Linux/macOS 可在仓库目录使用 `curl -L 'https://files.grouplens.org/datasets/movielens/ml-1m.zip' -o ml-1m.zip`，然后自行核对官方页面提供的校验值。
+
    下载后先阅读 [GroupLens 使用条款](https://files.grouplens.org/datasets/movielens/ml-1m-README.txt)：研究用途、注明来源，不得未经许可再分发数据；商业用途需另行取得许可。因此本仓库不包含数据集，也不会提供作者本地清洗记录或模型。官方 ZIP 与作者的本地修改版并不相同，不能期待汇报文档里的固定数值。
 
 4. 设置你自己的 `DEEPSEEK_API_KEY` 环境变量。代码不会读取 `OPENAI_API_KEY`，也不会把密钥写入报告或轨迹。`DEEPSEEK_BASE_URL` 默认 `https://api.deepseek.com`，`DEEPSEEK_MODEL` 默认 `deepseek-flash`；两者一般无需配置。请勿把真实密钥放进命令、源码、截图或仓库文件。
